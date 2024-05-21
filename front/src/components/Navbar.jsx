@@ -45,8 +45,8 @@ function Navbar() {
   const navItems = (<>
     <li><a href="/">Home</a></li>
     <li><a href="/product">Product</a></li>
-    <li><a>Contact</a></li>
-    <li><a>About Us</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a href="/about">About Us</a></li>
     <li></li>
   </>);
   return (
