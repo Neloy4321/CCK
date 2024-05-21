@@ -1,10 +1,11 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import cors from "cors"
+import cors from "cors";
 
 import cookRoute from "./route/cook.route.js";
 import userRoute from "./route/user.route.js";
+import contactRoute from "./route/contact.route.js"; // Add this line
 
 const app = express();
 
@@ -30,7 +31,8 @@ try {
 // defining routes
 app.use("/cook", cookRoute);
 app.use("/user", userRoute);
+app.use("/api", contactRoute); // Add this line
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`)
-})
+});

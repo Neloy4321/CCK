@@ -1,9 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const { name, email, message } = formData;
+
+    try {
+      const response = await fetch('http://localhost:4001/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name, email, message })
+      });
+
+      const result = await response.json();
+      if (response.ok) {
+        alert('Message sent successfully!');
+        setFormData({ name: '', email: '', message: '' }); // Clear form
+      } else {
+        alert('Error: ' + result.msg);
+      }
+    } catch (error) {
+      alert('Error: ' + error.message);
+    }
+  };
+
   return (
     <>
       <Navbar />
@@ -17,7 +55,7 @@ function Contact() {
           </p>
         </div>
         <div className="mt-12 flex justify-center">
-          <form className="w-full max-w-lg">
+          <form className="w-full max-w-lg" onSubmit={handleSubmit}>
             <div className="mb-6">
               <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
                 Name
@@ -26,7 +64,10 @@ function Contact() {
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="name"
                 type="text"
+                value={formData.name}
+                onChange={handleChange}
                 placeholder="Your Name"
+                required
               />
             </div>
             <div className="mb-6">
@@ -37,7 +78,10 @@ function Contact() {
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="email"
                 type="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="Your Email"
+                required
               />
             </div>
             <div className="mb-6">
@@ -48,13 +92,16 @@ function Contact() {
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="message"
                 rows="5"
+                value={formData.message}
+                onChange={handleChange}
                 placeholder="Your Message"
+                required
               ></textarea>
             </div>
             <div className="flex items-center justify-between">
               <button
                 className="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                type="button"
+                type="submit"
               >
                 Send Message
               </button>
@@ -78,7 +125,6 @@ function Contact() {
             title="Google Map"
           ></iframe>
         </div>
-        
       </div>
       <Footer/>
     </>
