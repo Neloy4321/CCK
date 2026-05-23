@@ -29,7 +29,7 @@ function Product() {
                         <span className="text-pink-500"> !! ChowdhuryCookaries !!</span>
                     </h1>
                     <p className="mt-10">
-                        Welcome to ChowdhuryCookaries!
+                        Welcome to ChowdhuryCrockerise!
                         We're thrilled to have you join our culinary community.
                         Explore our premium cooking appliances designed to elevate your kitchen experience.
                         From cutting-edge technology to timeless classics, we've got everything you need to unleash your inner chef.

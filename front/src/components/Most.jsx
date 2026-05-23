@@ -62,7 +62,7 @@ function Most() {
         <>
         <div  className=" max-w-screen-2xl container mx-auto md:px-20 px-4">
             <div><h1 className="font-bold text-2xl pb-2">Most Selling Products</h1>
-                <p className="text-xl">Chowdhury Cookaries has revolutionized kitchens worldwide with its top-selling cooking appliances.
+                <p className="text-xl">Chowdhury Crockerise has revolutionized kitchens worldwide with its top-selling cooking appliances.
                     Their multifunctional electric pressure cooker, renowned for its efficiency and versatility,leads the pack.
                     Additionally, their sleek air fryer has gained immense popularity for guilt-free frying.
                     Not to be overlooked is their innovative slow cooker, perfect for tenderizing meats and creating flavorful stews.</p>

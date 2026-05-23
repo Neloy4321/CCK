@@ -64,7 +64,7 @@ function Navbar() {
               <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">{navItems}
               </ul>
             </div>
-            <a className="text-3xl from-transparent">ChowdhuryCookaries</a>
+            <a className="text-3xl from-transparent">ChowdhuryCrockerise</a>
           </div>
           <div className="navbar-end space-x-3.5">
             <div className="navbar-center hidden lg:flex">

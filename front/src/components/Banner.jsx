@@ -1,5 +1,5 @@
 import React from 'react'
-import banner from "../../public/banner.jpg";
+import banner from "../../public/banner.png";
 
 function Banner() {
   return (
@@ -17,7 +17,7 @@ function Banner() {
         <div className="space-y-8">
             <h1 className= "text-3xl font-Jersey 20 Charted">
             Crafting Culinary Magic with authentic product. Now, Experience the Flavors of {" "} 
-            <span className="text-pink-500" >Chowdhury Cookeries</span>.
+            <span className="text-pink-500" >Chowdhury Crockerise</span>.
             </h1>
             <p className="text-xl">
             Chowdhury Cookaries appears to be a culinary venture, likely offering a diverse range of authentic and freshly prepared dishes or baked goods.
